@@ -1,0 +1,41 @@
+
+//ejemplo del tipo de busqueda que se pretende hacer//
+#include <iostream>
+#include <fstream>
+#include <conio.h>
+#include <cstdlib>
+#include <stdlib.h>
+ 
+using namespace std;
+ 
+string palabras[5];
+string introducir;
+ 
+int main()
+{
+	palabras[0]="casa";
+	palabras[1]="carro";
+	palabras[2]="avion";
+	palabras[3]="colegio";
+	palabras[4]="cafe";
+ 
+	cout<<"Ingrese la palabra a buscar: "<<endl;
+	cin>>introducir;
+ 
+	for(int i=0;i<5;i++)
+	{
+		if(palabras[i]==introducir)
+		{
+			cout<<endl<<"Encontraste una palabra... ";
+			getch();
+			system("cls");
+			return 0;
+		}
+	}
+	cout<<endl<<"La palabra que introdujo no esta en el arreglo "<<endl;
+	cout<<endl<<"Siga intentando... ";
+	getch();
+	system("cls");
+	main();
+ 
+}

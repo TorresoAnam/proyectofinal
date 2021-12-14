@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+int main(int argc, char *argv[]) {
+	int nA,A[100],k,elem,i,moverlo;
+	int pos,aux,eliminado,mover;
+    char  opcion;
+	string seguir;
+	do{
+		system("cls");
+	cout<<"A. Ingresar un busqueda "<<endl;
+	cout<<"B. Rellenar un busqueda"<<endl;
+	cout<<"C. Transferir busqueda "<<endl;
+	cout<<"D. Listar busqueda "<<endl;
+	cout<<"E. Agregar un elemento "<<endl;
+	cout<<"F. Inserción de un elemento"<<endl;
+	cout<<"G. Eliminación de un elemento "<<endl;
+	cin>>opcion;
+ 
+	switch (opcion) {
+	case 'A':
+	{
+		cout<<"Ingrese el tamaño de la busqueda "<<endl;
+		cin>>nA;
+		cout<<"su búsqueda se guardo correctamente"<<endl;
+	}break;
+	case 'B':
+	{
+		for(int i=0;i<nA;i++){
+			cout<<"Ingrese el numero "<<i+1<<" : "<<endl;
+			cin>>A[i];
+		}
+	}break;
+	case 'C':
+	{
+		cout << "\nLos numeros que acaban de ser guardados son:"<<" " <<endl;
+		for (i=0; i<nA; i++){
+			cout << "busqueda[" << i+1 << "]="<< A[i] << endl;
+		 
+	}break;
+	case 'D':
+	{
+		cout << "\nLa búsqueda que se ha guardado :"<<" " <<endl;
+		for (i=0; i<nA; i++){
+			cout << "busqueda[" << i+1 << "]="<< A[i] << endl;
+		}
+	}break;
+	case 'E':
+	{
+		cout<<"\t>>Que elemento busca: ";cin>>elem;
+		do{
+			}
+	}break;
+	case 'F':
+		{
+		for(i=0;i<nA;i++){
+			pos=i;
+			aux= A[i];
+ 
+			while((pos>0)&&(A[pos-1] > aux)){
+				A[pos]= A[pos-1];
+				pos--;
+			}
+			A[pos]=aux;
+		}
+		cout<<"Ordenamiento ascendente: "<<endl;
+		for(int i=0;i<nA;i++){
+			cout<<A[i]<<" "<<endl;
+		}
+ 
+ 
+	}break;
+	case 'G':
+		for (i=0; i<nA; i++){
+			cout << "busqueda[" << i << "]="<< A[i] << endl;
+		}
+		{
+		cout<<"\n Ingrese la busqueda a eliminar"<<endl;
+		cin>>pos;
+		eliminado=A[pos];
+		for(i=0;i<nA;i++){
+			if(i==pos){
+				while(i<nA-1){
+					A[i]=A[i+1];
+					i++;
+				}
+				break;
+			}
+		}
+		nA=nA-1;
+		for(i=0;i<nA;i++){
+			cout<<"Los elementos son "<<i<<" = "<<A[i]<<endl;
+		}
+		cout<<"El elemento eliminado es : "<<eliminado<<endl;
+	}break;
+ 
+	}
+	do
+	{
+		cout<<"DESEA CONTINUAR <S/N>:"<<endl;cin>>seguir;
+	}while(seguir[0]!='s'&& seguir[0]!='S' && seguir[0]!='n' && seguir[0]!='N');
+}while(seguir[0]!='n'&& seguir[0]!='N');
+cout<<"GRACIAS";
+	return 0;
+}
